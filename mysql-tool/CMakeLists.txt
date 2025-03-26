@@ -22,7 +22,7 @@ if(TARS_HTTP2)
 endif()
 
 if(NOT WIN32)
-    target_link_libraries(${MODULE} ${CMAKE_BINARY_DIR}/src/mysql/lib/libmysqlclient.a)
+    target_link_libraries(${MODULE} ${LIB_MYSQL})
 else ()
     target_link_libraries(${MODULE} ${LIB_MYSQL})
 endif()
