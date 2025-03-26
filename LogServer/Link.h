@@ -42,9 +42,9 @@ struct Trace {
 public:
     void push(const shared_ptr<RawLog> &rawLog);
 
-    InternalGraph graphServer();;
+    InternalGraph graphServer();
 
-    InternalGraph graphFunction();;
+    InternalGraph graphFunction();
 
 private:
     void graphServer_(const string &parentServer, const string &span, InternalGraph &graph);

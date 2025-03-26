@@ -106,7 +106,7 @@ vector<tars::TokenResponse> AuthImp::getTokens(const tars::TokenRequest& request
 
     
 #if 0
-   id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+ | id          | int(11)      | NO   | PRI | NULL    | auto_increment |
  | application | varchar(128) | YES  | MUL |         |                |
  | server      | varchar(128) | YES  |     | NULL    |                |
  | objname     | varchar(128) | YES  |     |         |                |
