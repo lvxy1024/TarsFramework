@@ -218,8 +218,8 @@ check_mysql ${USER} ${PASS}
 
 function exec_mysql_has()
 {
-    #echo "${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8 --has=$1"
-    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8 --has=$1
+    #echo "${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8mb4 --has=$1"
+    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8mb4 --has=$1
 
     ret=$?
     LOG_DEBUG "exec_mysql_has $1, ret: $ret"
@@ -229,7 +229,7 @@ function exec_mysql_has()
 
 function exec_mysql_script()
 {
-    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8 --sql="$1"
+    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8mb4 --sql="$1"
 
     ret=$?
 
@@ -240,9 +240,9 @@ function exec_mysql_script()
 
 function exec_mysql_upgrade()
 {
-#    echo "${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8 --tars-path=${TARS_PATH} --upgrade=$1"
+#    echo "${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8mb4 --tars-path=${TARS_PATH} --upgrade=$1"
 
-    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8 --tars-path=${TARS_PATH} --upgrade=$1
+    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8mb4 --tars-path=${TARS_PATH} --upgrade=$1
 
     ret=$?
 
@@ -257,8 +257,8 @@ function exec_mysql_upgrade()
 
 function exec_mysql_sql()
 {
-    #echo "${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8 --db=$1 --file=$2"
-    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8 --tars-path=${TARS_PATH} --db=$1 --file=$2
+    #echo "${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8mb4 --db=$1 --file=$2"
+    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8mb4 --tars-path=${TARS_PATH} --db=$1 --file=$2
 
     ret=$?
 
@@ -273,8 +273,8 @@ function exec_mysql_sql()
 
 function exec_mysql_template()
 {
-    #echo "${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8 --parent=$1 --template=$2 --profile=$3"
-    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${TARS_USER} --pass=${TARS_PASS} --port=${PORT} --charset=utf8 --db=db_tars --upload-path=${UPLOAD_PATH} --tars-path=${TARS_PATH} --parent=$1 --template=$2 --profile=$3 --overwrite=$OVERWRITE
+    #echo "${MYSQL_TOOL} --host=${MYSQLIP} --user=${USER} --pass=${PASS} --port=${PORT} --charset=utf8mb4 --parent=$1 --template=$2 --profile=$3"
+    ${MYSQL_TOOL} --host=${MYSQLIP} --user=${TARS_USER} --pass=${TARS_PASS} --port=${PORT} --charset=utf8mb4 --db=db_tars --upload-path=${UPLOAD_PATH} --tars-path=${TARS_PATH} --parent=$1 --template=$2 --profile=$3 --overwrite=$OVERWRITE
 
     ret=$?
 

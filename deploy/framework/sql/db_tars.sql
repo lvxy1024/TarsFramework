@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `t_adapter_conf`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_adapter_conf` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `application` varchar(50) DEFAULT '',
@@ -44,7 +44,7 @@ CREATE TABLE `t_adapter_conf` (
   UNIQUE KEY `application` (`application`,`server_name`,`node_name`,`adapter_name`),
   KEY `adapter_conf_endpoint_index` (`endpoint`),
   KEY `index_regtime_1` (`registry_timestamp`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,7 +53,7 @@ CREATE TABLE `t_adapter_conf` (
 
 DROP TABLE IF EXISTS `t_config_files`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_config_files` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `server_name` varchar(128) DEFAULT '',
@@ -69,7 +69,7 @@ CREATE TABLE `t_config_files` (
   `config_flag` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `application` (`server_name`,`filename`,`host`,`level`,`set_name`,`set_area`,`set_group`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +78,7 @@ CREATE TABLE `t_config_files` (
 
 DROP TABLE IF EXISTS `t_config_history_files`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_config_history_files` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `configid` int(11) DEFAULT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE `t_config_history_files` (
   `posttime` datetime DEFAULT NULL,
   `lastuser` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,14 +97,14 @@ CREATE TABLE `t_config_history_files` (
 
 DROP TABLE IF EXISTS `t_config_references`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_config_references` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `config_id` int(11) DEFAULT NULL,
   `reference_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `config_id` (`config_id`,`reference_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +113,7 @@ CREATE TABLE `t_config_references` (
 
 DROP TABLE IF EXISTS `t_group_priority`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_group_priority` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) DEFAULT '',
@@ -121,7 +121,7 @@ CREATE TABLE `t_group_priority` (
   `list_order` int(11) DEFAULT '0',
   `station` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +130,7 @@ CREATE TABLE `t_group_priority` (
 
 DROP TABLE IF EXISTS `t_machine_tars_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_machine_tars_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `application` varchar(100) NOT NULL DEFAULT '',
@@ -144,7 +144,7 @@ CREATE TABLE `t_machine_tars_info` (
   PRIMARY KEY (`application`,`server_name`,`node_name`),
   UNIQUE KEY `id` (`id`),
   KEY `tmachine_i_2` (`node_name`,`server_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +153,7 @@ CREATE TABLE `t_machine_tars_info` (
 
 DROP TABLE IF EXISTS `t_node_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_node_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `node_name` varchar(128) DEFAULT '',
@@ -176,7 +176,7 @@ CREATE TABLE `t_node_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `node_name` (`node_name`),
   KEY `indx_node_info_1` (`last_heartbeat`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +185,7 @@ CREATE TABLE `t_node_info` (
 
 DROP TABLE IF EXISTS `t_profile_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_profile_template` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `template_name` varchar(128) DEFAULT '',
@@ -195,7 +195,7 @@ CREATE TABLE `t_profile_template` (
   `lastuser` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `template_name` (`template_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,7 +204,7 @@ CREATE TABLE `t_profile_template` (
 
 DROP TABLE IF EXISTS `t_registry_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_registry_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `locator_id` varchar(128) NOT NULL DEFAULT '',
@@ -217,7 +217,7 @@ CREATE TABLE `t_registry_info` (
   `enable_group` char(1) DEFAULT 'N',
   PRIMARY KEY (`id`),
   UNIQUE KEY `locator_id` (`locator_id`,`servant`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +226,7 @@ CREATE TABLE `t_registry_info` (
 
 DROP TABLE IF EXISTS `t_server_conf`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_server_conf` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `application` varchar(128) DEFAULT '',
@@ -271,7 +271,7 @@ CREATE TABLE `t_server_conf` (
   KEY `node_name` (`node_name`),
   KEY `index_i_3` (`setting_state`,`server_type`,`application`,`server_name`,`node_name`),
   KEY `index_regtime` (`registry_timestamp`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 
@@ -281,7 +281,7 @@ CREATE TABLE `t_server_conf` (
 
 DROP TABLE IF EXISTS `t_base_image`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_base_image` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `image` varchar(255) NOT NULL DEFAULT '',
@@ -291,7 +291,7 @@ CREATE TABLE `t_base_image` (
       `create_time` datetime DEFAULT NULL,
       `update_time` datetime DEFAULT NULL,
       PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 --
@@ -300,7 +300,7 @@ CREATE TABLE `t_base_image` (
 
 DROP TABLE IF EXISTS `t_framework_key`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_framework_key` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `key` varchar(16) NOT NULL DEFAULT 'key',
@@ -310,7 +310,7 @@ CREATE TABLE `t_framework_key` (
       `update_time` datetime DEFAULT NULL,
       PRIMARY KEY (`id`),
       KEY `idx_key` (`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Table structure for table `t_docker_registry`
@@ -318,7 +318,7 @@ CREATE TABLE `t_framework_key` (
 
 DROP TABLE IF EXISTS `t_docker_registry`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_docker_registry` (
                                 `id` int(11) NOT NULL AUTO_INCREMENT,
                                 `registry` varchar(255) NOT NULL DEFAULT '',
@@ -328,7 +328,7 @@ CREATE TABLE `t_docker_registry` (
                                 `create_time` datetime DEFAULT NULL,
                                 `update_time` datetime DEFAULT NULL,
                                 PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Table structure for table `t_server_group_relation`
@@ -336,7 +336,7 @@ CREATE TABLE `t_docker_registry` (
 
 DROP TABLE IF EXISTS `t_server_group_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_server_group_relation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `application` varchar(90) NOT NULL DEFAULT '',
@@ -346,7 +346,7 @@ CREATE TABLE `t_server_group_relation` (
   `creator` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `f_unique` (`application`,`server_group`,`server_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -355,7 +355,7 @@ CREATE TABLE `t_server_group_relation` (
 
 DROP TABLE IF EXISTS `t_server_group_rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_server_group_rule` (
   `group_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ip_order` enum('allow_denny','denny_allow') NOT NULL DEFAULT 'denny_allow',
@@ -367,7 +367,7 @@ CREATE TABLE `t_server_group_rule` (
   `group_name_cn` varchar(128) DEFAULT '',
   PRIMARY KEY (`group_id`),
   UNIQUE KEY `group_name_index` (`group_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -376,7 +376,7 @@ CREATE TABLE `t_server_group_rule` (
 
 DROP TABLE IF EXISTS `t_server_patchs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_server_patchs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `server` varchar(50) DEFAULT NULL,
@@ -402,7 +402,7 @@ CREATE TABLE `t_server_patchs` (
   KEY `server_patchs_server_index` (`server`),
   KEY `index_patchs_i1` (`server`),
   KEY `index_i_2` (`tgz`(50))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -411,7 +411,7 @@ CREATE TABLE `t_server_patchs` (
 
 DROP TABLE IF EXISTS `t_task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_task` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `task_no` varchar(40) DEFAULT NULL,
@@ -420,7 +420,7 @@ CREATE TABLE `t_task` (
   `create_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `f_task` (`task_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -429,7 +429,7 @@ CREATE TABLE `t_task` (
 
 DROP TABLE IF EXISTS `t_task_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_task_item` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `task_no` varchar(40) DEFAULT NULL,
@@ -448,7 +448,7 @@ CREATE TABLE `t_task_item` (
   UNIQUE KEY `f_uniq` (`item_no`,`task_no`),
   KEY `f_task_no` (`task_no`),
   KEY `f_index` (`application`,`server_name`,`command`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -457,7 +457,7 @@ CREATE TABLE `t_task_item` (
 
 DROP TABLE IF EXISTS `t_web_release_conf`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_web_release_conf` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `server` varchar(100) NOT NULL DEFAULT '',
@@ -471,7 +471,7 @@ CREATE TABLE `t_web_release_conf` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `server` (`server`,`is_server_group`),
   KEY `web_release_conf_server_index` (`server`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

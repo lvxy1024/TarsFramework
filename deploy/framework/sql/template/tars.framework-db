@@ -6,7 +6,7 @@
         dbuser=tars
         dbpass=tars2015
         dbport=3306
-        charset=utf8
+        charset=utf8mb4
         dbflag=CLIENT_MULTI_STATEMENTS
     </db>
 
@@ -18,7 +18,7 @@
          dbuser=tars
          dbpass=tars2015
          dbport=3306
-         charset=utf8
+         charset=utf8mb4
         </db1>
     </propertydb>
 
@@ -30,7 +30,7 @@
          dbuser=tars
          dbpass=tars2015
          dbport=3306
-         charset=utf8
+         charset=utf8mb4
         </db1>
     </statdb>
 </tars>

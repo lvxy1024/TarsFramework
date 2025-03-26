@@ -90,9 +90,7 @@ else
       elif [[ "$OS" =~ "Debian" ]]; then
         OS=4
       else
-        echo "OS not support:"
-        echo $OS
-        exit 1
+        OS=2
       fi
     fi
 fi
